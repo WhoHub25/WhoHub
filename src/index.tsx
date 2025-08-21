@@ -85,17 +85,21 @@ app.get('/', (c) => {
               extend: {
                 colors: {
                   primary: {
-                    50: '#eff6ff',
-                    500: '#3b82f6',
-                    600: '#2563eb',
-                    700: '#1d4ed8',
-                    900: '#1e3a8a'
+                    50: '#fff7ed',
+                    500: '#f97316',
+                    600: '#ea580c',
+                    700: '#c2410c',
+                    900: '#9a3412'
                   },
                   danger: {
                     50: '#fef2f2',
                     500: '#ef4444',
                     600: '#dc2626',
                     700: '#b91c1c'
+                  },
+                  whohub: {
+                    orange: '#f97316',
+                    dark: '#1a1a1a'
                   }
                 }
               }
@@ -109,8 +113,7 @@ app.get('/', (c) => {
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-16">
                     <div class="flex items-center">
-                        <i class="fas fa-shield-alt text-primary-600 text-2xl mr-3"></i>
-                        <h1 class="text-xl font-bold text-gray-900">WhoHub</h1>
+                        <img src="/static/whohub-logo.png" alt="WhoHub" class="h-8 w-auto">
                     </div>
                     <div class="flex items-center space-x-4">
                         <a href="#features" class="text-gray-600 hover:text-gray-900">Features</a>
@@ -124,8 +127,11 @@ app.get('/', (c) => {
         <!-- Main Content -->
         <main class="min-h-screen">
             <!-- Hero Section -->
-            <section class="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-20">
+            <section class="bg-gradient-to-r from-gray-900 to-black text-white py-20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div class="mb-8">
+                        <img src="/static/whohub-logo-tagline.png" alt="WhoHub - Know who you're really meeting" class="h-32 w-auto mx-auto mb-6">
+                    </div>
                     <h1 class="text-4xl md:text-6xl font-bold mb-6">
                         Stop Dating Scammers
                     </h1>
@@ -133,11 +139,11 @@ app.get('/', (c) => {
                         Professional OSINT investigations to detect catfish, fake profiles, and scammers on dating platforms
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button id="start-investigation" class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+                        <button id="start-investigation" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-600 transition-colors shadow-lg">
                             <i class="fas fa-search mr-2"></i>
                             Start Investigation
                         </button>
-                        <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary-600 transition-colors">
+                        <button class="border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-500 hover:text-white transition-colors">
                             <i class="fas fa-play mr-2"></i>
                             Watch Demo
                         </button>
