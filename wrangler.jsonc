@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "whohub",
+  "name": "whohub-production",
   "compatibility_date": "2025-08-21",
   "pages_build_output_dir": "./dist",
   "compatibility_flags": [
@@ -41,6 +41,7 @@
   // Environment variables (secrets will be set via wrangler)
   "vars": {
     "ENVIRONMENT": "production",
-    "APP_VERSION": "1.0.0"
+    "APP_VERSION": "1.0.0",
+    "DOMAIN": "whohub.com.au"
   }
 }

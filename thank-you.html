@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for joining WhoHub early access program. We'll contact you soon with exclusive access details.">
+    <title>Thank You - WhoHub Early Access</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./images/whohub-logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar container">
+            <div class="logo-container">
+                <img src="./images/whohub-logo.png" alt="WhoHub Logo" class="logo">
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/#features" class="nav-link">Features</a></li>
+                <li><a href="/#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="/#about" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Thank You Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="feature-icon" style="font-size: 4rem; color: #10b981; margin-bottom: 32px;">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                
+                <img src="./images/whohub-logo-tagline.png" alt="WhoHub - Professional OSINT Dating Safety Platform" class="hero-logo" style="height: 200px;">
+                
+                <h1>Thank You for Your Interest!</h1>
+                <p class="subtitle">
+                    🎉 You've successfully joined the <strong>WhoHub Early Access Program</strong>!<br><br>
+                    We'll contact you soon with exclusive early access details, special pricing, and priority support for our professional OSINT dating safety platform.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="/" class="btn btn-primary btn-lg">
+                        <i class="fas fa-home"></i>
+                        Return to Homepage
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Next Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Happens Next?</h2>
+                <p class="section-subtitle">
+                    Here's what you can expect as an early access member
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-email"></i>
+                    </div>
+                    <h3 class="feature-title">Priority Notification</h3>
+                    <p class="feature-description">
+                        You'll be among the first to know when WhoHub launches with exclusive early access invitations.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <h3 class="feature-title">Special Pricing</h3>
+                    <p class="feature-description">
+                        Early access members receive exclusive discounts on investigation reports and priority processing.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">Premium Support</h3>
+                    <p class="feature-description">
+                        Get direct access to our OSINT experts and priority customer support during the beta phase.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>WhoHub</h3>
+                    <p style="color: #9ca3af; line-height: 1.6;">
+                        Professional OSINT dating safety platform protecting users worldwide from catfish, 
+                        scammers, and fake profiles through advanced investigation techniques.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p style="color: #9ca3af;">
+                        <i class="fas fa-envelope" style="margin-right: 8px;"></i>
+                        hello@whohub.com.au
+                    </p>
+                    <p style="color: #9ca3af;">
+                        <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>
+                        Australia
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 WhoHub. All rights reserved. Professional OSINT Dating Safety Platform.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="./js/main.js"></script>
+    
+    <script>
+        // Track successful form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    send_to: 'AW-CONVERSION_ID/CONVERSION_LABEL',
+                    event_callback: function() {
+                        console.log('Conversion tracked');
+                    }
+                });
+            }
+            
+            // Auto redirect after 30 seconds
+            setTimeout(function() {
+                if (confirm('Would you like to return to the homepage?')) {
+                    window.location.href = '/';
+                }
+            }, 30000);
+        });
+    </script>
+</body>
+</html>
