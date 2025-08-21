@@ -1,0 +1,24 @@
+# Netlify ignore file - exclude build files for static site deployment
+package.json
+package-lock.json
+vite.config.ts
+tsconfig.json
+node_modules/
+.wrangler/
+dist/
+src/
+migrations/
+ecosystem.config.cjs
+seed.sql
+wrangler.jsonc
+
+# Keep only static files
+# index.html
+# thank-you.html
+# css/
+# js/
+# images/
+# netlify.toml
+# _headers
+# README.md
+# NETLIFY-DEPLOYMENT.md
