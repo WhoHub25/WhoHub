@@ -437,19 +437,56 @@ function initializeApp() {
   whoHubApp = new WhoHubApp()
   
   // Bind global event listeners
-  document.getElementById('start-investigation').addEventListener('click', () => {
-    whoHubApp.showInvestigationModal('simple')
-  })
+  const startBtn = document.getElementById('start-investigation')
+  if (startBtn) {
+    startBtn.addEventListener('click', () => {
+      whoHubApp.showInvestigationModal('simple')
+    })
+  }
   
-  document.getElementById('close-modal').addEventListener('click', () => {
-    whoHubApp.hideInvestigationModal()
-  })
+  const closeBtn = document.getElementById('close-modal')
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      whoHubApp.hideInvestigationModal()
+    })
+  }
   
   // Modal background click to close
-  document.getElementById('investigation-modal').addEventListener('click', (e) => {
-    if (e.target.id === 'investigation-modal') {
-      whoHubApp.hideInvestigationModal()
-    }
+  const modal = document.getElementById('investigation-modal')
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target.id === 'investigation-modal') {
+        whoHubApp.hideInvestigationModal()
+      }
+    })
+  }
+  
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn')
+  const mobileMenu = document.getElementById('mobile-menu')
+  
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden')
+    })
+  }
+  
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault()
+      const target = document.querySelector(this.getAttribute('href'))
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+        // Close mobile menu if open
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden')
+        }
+      }
+    })
   })
 }
 
@@ -468,3 +505,65 @@ async function checkInvestigationStatus(investigationId) {
     return null
   }
 }
+
+// FAQ toggle function
+function toggleFAQ(faqNumber) {
+  const faqContent = document.getElementById(`faq-${faqNumber}`)
+  const allFAQs = document.querySelectorAll('[id^="faq-"]')
+  
+  // Close all other FAQs
+  allFAQs.forEach(faq => {
+    if (faq.id !== `faq-${faqNumber}`) {
+      faq.classList.add('hidden')
+      // Reset chevron icon
+      const button = faq.previousElementSibling
+      const icon = button.querySelector('i')
+      if (icon) {
+        icon.classList.remove('fa-chevron-up')
+        icon.classList.add('fa-chevron-down')
+      }
+    }
+  })
+  
+  // Toggle current FAQ
+  faqContent.classList.toggle('hidden')
+  
+  // Toggle chevron icon
+  const button = faqContent.previousElementSibling
+  const icon = button.querySelector('i')
+  if (icon) {
+    if (faqContent.classList.contains('hidden')) {
+      icon.classList.remove('fa-chevron-up')
+      icon.classList.add('fa-chevron-down')
+    } else {
+      icon.classList.remove('fa-chevron-down')
+      icon.classList.add('fa-chevron-up')
+    }
+  }
+}
+
+// Scroll animations
+function initializeScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  }
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-in')
+      }
+    })
+  }, observerOptions)
+  
+  // Observe all feature cards and sections
+  document.querySelectorAll('.group, .feature-card, section').forEach(el => {
+    observer.observe(el)
+  })
+}
+
+// Add scroll animations after DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(initializeScrollAnimations, 1000)
+})
