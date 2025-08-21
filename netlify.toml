@@ -1,6 +1,7 @@
 # Netlify configuration for WhoHub deployment
 [build]
   # No build process needed - static HTML site
+  command = ""
   publish = "."
   
 # Redirect rules for SPA behavior and domain management
