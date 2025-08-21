@@ -1,0 +1,46 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "whohub",
+  "compatibility_date": "2025-08-21",
+  "pages_build_output_dir": "./dist",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  
+  // D1 Database for OSINT data storage
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "whohub-production",
+      "database_id": "placeholder-will-be-updated-after-creation"
+    }
+  ],
+  
+  // R2 Storage for uploaded images and generated reports
+  "r2_buckets": [
+    {
+      "binding": "R2",
+      "bucket_name": "whohub-storage"
+    }
+  ],
+  
+  // KV Storage for caching and session management
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "placeholder-will-be-updated-after-creation",
+      "preview_id": "placeholder-for-local-dev"
+    }
+  ],
+  
+  // Cloudflare AI for image analysis and content generation
+  "ai": {
+    "binding": "AI"
+  },
+  
+  // Environment variables (secrets will be set via wrangler)
+  "vars": {
+    "ENVIRONMENT": "production",
+    "APP_VERSION": "1.0.0"
+  }
+}
